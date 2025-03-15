@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen(
+      {super.key, required this.alternarTema, required this.darkMode});
+
+  final VoidCallback alternarTema;
+  final bool darkMode;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool _darkMode = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  appBarMethod() {
+  AppBar appBarMethod() {
     return AppBar(
       toolbarHeight: 80,
       elevation: 0,
@@ -35,12 +37,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           IconButton(
             icon: Icon(
-              _darkMode ? Icons.nightlight_round : Icons.wb_sunny,
+              widget.darkMode ? Icons.nightlight_round : Icons.wb_sunny,
               color: Colors.white,
             ),
-            onPressed: () {
-              _alternarTema();
-            },
+            onPressed: widget.alternarTema,
           ),
           Expanded(
             child: Align(
@@ -57,11 +57,5 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
-  }
-
-  void _alternarTema() {
-    setState(() {
-      _darkMode = !_darkMode;
-    });
   }
 }
