@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen(
@@ -17,6 +18,30 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: appBarMethod(context),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              children: [
+                buscarNota(),
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Text(
+                    'Tarefas',
+                    style: GoogleFonts.comicNeue(
+                      fontSize: 28,
+                      fontWeight: FontWeight.w600,
+                      color: Theme.of(context).colorScheme.secondary,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -57,6 +82,30 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  buscarNota() {
+    return Container(
+      padding: const EdgeInsets.all(15),
+      height: 50,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: TextField(
+        onChanged: (value) {
+          // a func filtro irá aqui
+        },
+        style: TextStyle(color: Colors.grey),
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          prefixIcon: Icon(Icons.search, color: Colors.grey, size: 25),
+          prefixIconConstraints: BoxConstraints(maxHeight: 20, minWidth: 25),
+          border: InputBorder.none,
+          hintText: "Pesquisar",
+        ),
       ),
     );
   }
