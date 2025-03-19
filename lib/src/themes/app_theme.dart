@@ -7,7 +7,7 @@ class AppTheme {
     scaffoldBackgroundColor: const Color(0xFFC9B0EC),
     primaryColor: Colors.deepPurple,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color(0xFF7327D1),
+      backgroundColor: Color(0xFF9429E6),
       foregroundColor: Colors.black,
     ),
     colorScheme: ColorScheme.light(
@@ -23,7 +23,11 @@ class AppTheme {
         ),
       ),
     ),
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(iconColor: WidgetStatePropertyAll(Colors.black)),
+    ),
   );
+
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: const Color(0xFF1E1E1E),
@@ -44,6 +48,9 @@ class AppTheme {
           fontWeight: FontWeight.w600,
         ),
       ),
+    ),
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(iconColor: WidgetStatePropertyAll(Colors.white)),
     ),
   );
 }

@@ -16,14 +16,15 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: appBarMethod(),
+      appBar: appBarMethod(context),
     );
   }
 
-  AppBar appBarMethod() {
+  AppBar appBarMethod(BuildContext context) {
     return AppBar(
       toolbarHeight: 80,
       elevation: 0,
+      automaticallyImplyLeading: false,
       title: Row(
         children: [
           Expanded(
@@ -38,7 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: Icon(
               widget.darkMode ? Icons.nightlight_round : Icons.wb_sunny,
-              color: Colors.white,
             ),
             onPressed: widget.alternarTema,
           ),
@@ -49,7 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 cursor: SystemMouseCursors.click,
                 child: IconButton(
                   onPressed: () {},
-                  icon: const SizedBox.shrink(),
+                  icon: const Icon(
+                    Icons.logout,
+                  ),
                 ),
               ),
             ),
