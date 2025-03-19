@@ -11,7 +11,7 @@ class AppTheme {
       foregroundColor: Colors.black,
     ),
     colorScheme: const ColorScheme.light(
-      primary: Colors.purple,
+      primary: Colors.black,
       secondary: Color(0xFF731FB3),
     ),
     textTheme: GoogleFonts.comicNeueTextTheme(
@@ -37,7 +37,7 @@ class AppTheme {
       foregroundColor: Colors.white,
     ),
     colorScheme: ColorScheme.dark(
-      primary: Colors.purple.shade600,
+      primary: Colors.white,
       secondary: const Color(0xFFC2A8E8),
     ),
     textTheme: GoogleFonts.comicNeueTextTheme(

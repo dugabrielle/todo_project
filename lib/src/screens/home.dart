@@ -32,12 +32,35 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: GoogleFonts.comicNeue(
                       fontSize: 28,
                       fontWeight: FontWeight.w600,
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.primary,
                       letterSpacing: 2,
                     ),
                   ),
                 ),
               ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              margin: EdgeInsets.only(bottom: 15, right: 15, left: 10),
+              width: 80,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  '+',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Colors.white
+                        : Colors.black,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.secondary,
+                ),
+              ),
             ),
           ),
         ],
