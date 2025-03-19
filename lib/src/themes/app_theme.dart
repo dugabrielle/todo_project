@@ -36,9 +36,9 @@ class AppTheme {
       backgroundColor: Color(0xFF9673D2),
       foregroundColor: Colors.white,
     ),
-    colorScheme: ColorScheme.dark(
+    colorScheme: const ColorScheme.dark(
       primary: Colors.white,
-      secondary: const Color(0xFFC2A8E8),
+      secondary: Color(0xFFC2A8E8),
     ),
     textTheme: GoogleFonts.comicNeueTextTheme(
       const TextTheme(

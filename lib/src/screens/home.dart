@@ -43,10 +43,13 @@ class _HomeScreenState extends State<HomeScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              margin: EdgeInsets.only(bottom: 15, right: 15, left: 10),
+              margin: const EdgeInsets.only(bottom: 15, right: 15, left: 10),
               width: 80,
               child: ElevatedButton(
                 onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.secondary,
+                ),
                 child: Text(
                   '+',
                   style: TextStyle(
@@ -56,9 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ? Colors.white
                         : Colors.black,
                   ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Theme.of(context).colorScheme.secondary,
                 ),
               ),
             ),
@@ -121,8 +121,8 @@ class _HomeScreenState extends State<HomeScreen> {
         onChanged: (value) {
           // a func filtro irá aqui
         },
-        style: TextStyle(color: Colors.grey),
-        decoration: InputDecoration(
+        style: const TextStyle(color: Colors.grey),
+        decoration: const InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           prefixIcon: Icon(Icons.search, color: Colors.grey, size: 25),
           prefixIconConstraints: BoxConstraints(maxHeight: 20, minWidth: 25),
