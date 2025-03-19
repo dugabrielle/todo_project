@@ -97,8 +97,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 cursor: SystemMouseCursors.click,
                 child: IconButton(
                   onPressed: () {},
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.logout,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
               ),

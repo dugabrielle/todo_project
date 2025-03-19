@@ -24,7 +24,11 @@ class AppTheme {
       ),
     ),
     iconButtonTheme: const IconButtonThemeData(
-      style: ButtonStyle(iconColor: WidgetStatePropertyAll(Colors.black)),
+      style: ButtonStyle(
+        iconColor: WidgetStatePropertyAll(
+          Color(0xFFFFA500),
+        ),
+      ),
     ),
   );
 
@@ -50,7 +54,11 @@ class AppTheme {
       ),
     ),
     iconButtonTheme: const IconButtonThemeData(
-      style: ButtonStyle(iconColor: WidgetStatePropertyAll(Colors.white)),
+      style: ButtonStyle(
+        iconColor: WidgetStatePropertyAll(
+          Color(0xFF1A3B6D),
+        ),
+      ),
     ),
   );
 }
