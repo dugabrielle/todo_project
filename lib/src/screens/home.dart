@@ -49,16 +49,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.secondary,
+                  minimumSize: const Size(50, 50),
                 ),
-                child: Text(
-                  '+',
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).brightness == Brightness.light
-                        ? Colors.white
-                        : Colors.black,
-                  ),
+                child: Icon(
+                  Icons.add,
+                  size: 28,
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? Colors.white
+                      : Colors.black,
                 ),
               ),
             ),
