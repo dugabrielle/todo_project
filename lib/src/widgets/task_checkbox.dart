@@ -32,7 +32,7 @@ class TaskCheckbox extends StatelessWidget {
           },
           activeColor: Colors.black,
           checkColor: Colors.white,
-          hoverColor: Colors.purple[100],
+          hoverColor: const Color(0xFFECD4F0),
           side: const BorderSide(
             color: Colors.deepPurpleAccent,
             width: 2,
@@ -62,7 +62,7 @@ class TaskCheckbox extends StatelessWidget {
               },
               icon: const Icon(Icons.delete),
               iconSize: 25,
-              color: Colors.grey[800],
+              color: Colors.grey[500],
             ),
             const SizedBox(width: 5),
             IconButton(
@@ -71,7 +71,7 @@ class TaskCheckbox extends StatelessWidget {
               },
               icon: const Icon(Icons.edit_note),
               iconSize: 25,
-              color: const Color(0xFF38b64b),
+              color: const Color(0xFF60D57A),
             ),
           ],
         ),
