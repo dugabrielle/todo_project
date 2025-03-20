@@ -160,12 +160,15 @@ class _HomeScreenState extends State<HomeScreen> {
           // a func filtro irá aqui
         },
         style: const TextStyle(color: Colors.grey),
-        decoration: const InputDecoration(
-          contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          prefixIcon: Icon(Icons.search, color: Colors.grey, size: 25),
-          prefixIconConstraints: BoxConstraints(maxHeight: 20, minWidth: 25),
+        decoration: InputDecoration(
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          prefixIcon: const Icon(Icons.search, color: Colors.grey, size: 25),
+          prefixIconConstraints:
+              const BoxConstraints(maxHeight: 20, minWidth: 25),
           border: InputBorder.none,
           hintText: "Pesquisar",
+          hintStyle: TextStyle(color: Colors.grey[700]),
         ),
       ),
     );
