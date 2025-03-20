@@ -32,6 +32,7 @@ class TaskCheckbox extends StatelessWidget {
           },
           activeColor: Colors.black,
           checkColor: Colors.white,
+          hoverColor: Colors.purple[100],
           side: const BorderSide(
             color: Colors.deepPurpleAccent,
             width: 2,
