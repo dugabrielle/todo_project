@@ -63,6 +63,7 @@ class TaskCheckbox extends StatelessWidget {
               icon: const Icon(Icons.delete),
               iconSize: 25,
               color: Colors.grey[500],
+              hoverColor: const Color(0xFFECD4F0),
             ),
             const SizedBox(width: 5),
             IconButton(
@@ -72,6 +73,7 @@ class TaskCheckbox extends StatelessWidget {
               icon: const Icon(Icons.edit_note),
               iconSize: 25,
               color: const Color(0xFF60D57A),
+              hoverColor: const Color(0xFFECD4F0),
             ),
           ],
         ),
