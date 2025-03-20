@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:todo_project/src/model/todo.dart';
+import 'package:todo_project/src/widgets/task_checkbox.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen(
@@ -13,6 +15,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<ToDo> tarefas = [
+    ToDo(id: '1', titulo: 'Treinar', descricao: '1 hora', checkbox: false),
+    ToDo(id: '2', titulo: 'Estudar', descricao: '3 horas', checkbox: false),
+    ToDo(
+        id: '3',
+        titulo: 'Escutar música',
+        descricao: 'Youtube',
+        checkbox: false),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +48,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       letterSpacing: 2,
                     ),
                   ),
+                ),
+                Column(
+                  children: [
+                    ...tarefas.map((tarefa) => TaskCheckbox(
+                          todo: tarefa,
+                          completarTarefa: completarTarefa,
+                          excluirTarefa: excluirTarefa,
+                          editarTarefa: editarTarefa,
+                        )),
+                  ],
                 ),
               ],
             ),
@@ -64,6 +86,22 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  void completarTarefa(ToDo todo) {
+    setState(() {
+      todo.checkbox = !todo.checkbox;
+    });
+  }
+
+  void excluirTarefa(String id) {
+    setState(() {
+      tarefas.removeWhere((tarefa) => tarefa.id == id);
+    });
+  }
+
+  void editarTarefa(ToDo todo) {
+    // dialogoEdit
   }
 
   AppBar appBarMethod(BuildContext context) {
