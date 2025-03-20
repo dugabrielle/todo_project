@@ -51,14 +51,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Column(
                   children: [
-                    ...tarefas.map((tarefa) => TaskCheckbox(
-                          todo: tarefa,
-                          completarTarefa: completarTarefa,
-                          excluirTarefa: excluirTarefa,
-                          editarTarefa: editarTarefa,
-                        )),
+                    for (var tarefa in tarefas)
+                      TaskCheckbox(
+                        todo: tarefa,
+                        completarTarefa: completarTarefa,
+                        excluirTarefa: excluirTarefa,
+                        editarTarefa: editarTarefa,
+                      ),
                   ],
-                ),
+                )
               ],
             ),
           ),
