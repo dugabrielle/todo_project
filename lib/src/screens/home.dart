@@ -65,15 +65,42 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 Column(
                   children: [
-                    for (var tarefa in tarefas)
+                    for (var todo in tarefas.where((todo) => !todo.checkbox))
                       TaskCheckbox(
-                        todo: tarefa,
+                        todo: todo,
                         completarTarefa: completarTarefa,
                         excluirTarefa: excluirTarefa,
                         editarTarefa: editarTarefa,
                       ),
                   ],
-                )
+                ),
+                if (tarefas.where((todo) => todo.checkbox).isNotEmpty) ...[
+                  const Divider(color: Colors.grey),
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Tarefas Concluídas',
+                      style: GoogleFonts.comicNeue(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.primary,
+                        letterSpacing: 2,
+                      ),
+                    ),
+                  ),
+                ],
+                Column(
+                  children: [
+                    for (var todo in tarefas.where((todo) => todo.checkbox))
+                      TaskCheckbox(
+                        todo: todo,
+                        completarTarefa: completarTarefa,
+                        excluirTarefa: excluirTarefa,
+                        editarTarefa: editarTarefa,
+                      ),
+                  ],
+                ),
               ],
             ),
           ),
