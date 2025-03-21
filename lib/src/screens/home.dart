@@ -25,6 +25,17 @@ class _HomeScreenState extends State<HomeScreen> {
         checkbox: false),
   ];
 
+  List<ToDo> _filtrarNota = [];
+
+  final TextEditingController _tituloController = TextEditingController();
+  final TextEditingController _descricaoController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _filtrarNota = tarefas;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Text(
                     'Tarefas',
                     style: GoogleFonts.comicNeue(
-                      fontSize: 28,
+                      fontSize: 24,
                       fontWeight: FontWeight.w600,
                       color: Theme.of(context).colorScheme.primary,
                       letterSpacing: 2,
@@ -146,6 +157,20 @@ class _HomeScreenState extends State<HomeScreen> {
     // dialogoEdit
   }
 
+  void filtrarNota(String keyword) {
+    setState(() {
+      if (keyword.isEmpty) {
+        tarefas = _filtrarNota; // recupera a lista se o campo estiver vazio
+      } else {
+        tarefas = _filtrarNota
+            .where((todo) =>
+                todo.titulo.toLowerCase().contains(keyword.toLowerCase()) ||
+                todo.descricao!.toLowerCase().contains(keyword.toLowerCase()))
+            .toList();
+      }
+    });
+  }
+
   AppBar appBarMethod(BuildContext context) {
     return AppBar(
       toolbarHeight: 80,
@@ -197,9 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(
-        onChanged: (value) {
-          // a func filtro irá aqui
-        },
+        onChanged: filtrarNota,
         style: const TextStyle(color: Colors.grey),
         decoration: InputDecoration(
           contentPadding:
