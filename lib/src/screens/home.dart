@@ -121,7 +121,9 @@ class _HomeScreenState extends State<HomeScreen> {
               margin: const EdgeInsets.only(bottom: 15, right: 15, left: 10),
               width: 80,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  _addNota();
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.secondary,
                   minimumSize: const Size(50, 50),
@@ -169,6 +171,70 @@ class _HomeScreenState extends State<HomeScreen> {
             .toList();
       }
     });
+  }
+
+  void _addNota() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return StatefulBuilder(builder: (context, setState) {
+            return AlertDialog(
+              title: const Text('Adicionar Nota'),
+              content: Container(
+                constraints: const BoxConstraints(
+                  maxHeight: 300,
+                ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TextField(
+                        controller: _tituloController,
+                        decoration: const InputDecoration(labelText: 'Títiulo'),
+                        maxLength: 80,
+                        maxLines: null, // poderá ocupar várias linhas
+                        onChanged: (_) => setState(() {}),
+                      ),
+                      const SizedBox(height: 10),
+                      TextField(
+                        controller: _descricaoController,
+                        decoration: const InputDecoration(
+                            labelText: 'Descrição (opcional)'),
+                        maxLength: 80,
+                        maxLines: null,
+                      ),
+                      if (_tituloController.text.isEmpty)
+                        const Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: Text(
+                            'O Título não pode ser vazio!',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+              actions: [
+                IconButton(
+                  onPressed: () {
+                    if (_tituloController.text.isEmpty) {
+                      setState(() {}); // atualiza o estado para mostrar o erro
+                      return;
+                    }
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.save),
+                  iconSize: 22,
+                  color: Colors.purple,
+                ),
+              ],
+            );
+          });
+        });
   }
 
   AppBar appBarMethod(BuildContext context) {
