@@ -49,6 +49,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
+                if (tarefas.where((todo) => !todo.checkbox).isEmpty)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20.0),
+                    child: Center(
+                      child: Text(
+                        'Nenhuma tarefa encontrada.',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          color: Theme.of(context).colorScheme.secondary,
+                        ),
+                      ),
+                    ),
+                  ),
                 Column(
                   children: [
                     for (var tarefa in tarefas)
