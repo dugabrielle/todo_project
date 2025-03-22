@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
             alignment: Alignment.bottomCenter,
             child: Container(
               margin: const EdgeInsets.only(bottom: 15, right: 15, left: 10),
-              width: 80,
+              width: 100,
               child: ElevatedButton(
                 onPressed: () {
                   _addNota();
@@ -128,12 +128,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   backgroundColor: Theme.of(context).colorScheme.secondary,
                   minimumSize: const Size(50, 50),
                 ),
-                child: Icon(
-                  Icons.add,
-                  size: 28,
-                  color: Theme.of(context).brightness == Brightness.light
-                      ? Colors.white
-                      : Colors.black,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.add,
+                    size: 28,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Colors.white
+                        : Colors.black,
+                  ),
+                  iconSize: 28,
+                  onPressed: () {
+                    _addNota();
+                  },
                 ),
               ),
             ),
