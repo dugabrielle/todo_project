@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen(
-      {super.key,
-      required void Function() alternarTema,
-      required bool darkMode});
+  final void Function() alternarTema;
+  final bool darkMode;
+
+  const LoginScreen({
+    required this.alternarTema,
+    required this.darkMode,
+    super.key,
+  });
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
