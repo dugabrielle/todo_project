@@ -24,10 +24,17 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: _darkMode ? AppTheme.darkTheme : AppTheme.lightTheme,
-      home: LoginScreen(
-        alternarTema: _alternarTema,
-        darkMode: _darkMode, // adicionar dps o provider
-      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => WelcomeScreen(
+              alternarTema: _alternarTema,
+              darkMode: _darkMode, // adicionar dps o provider
+            ),
+        '/login': (context) => LoginScreen(
+              alternarTema: _alternarTema,
+              darkMode: _darkMode, // adicionar dps o provider
+            ),
+      },
     );
   }
 

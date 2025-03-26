@@ -64,7 +64,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       textStyle:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/login');
+                    },
                     child: const Text('Entrar'),
                   ),
                   const SizedBox(width: 20),
@@ -76,7 +78,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       textStyle:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+
+                    },
                     child: const Text('Criar conta'),
                   ),
                 ],
