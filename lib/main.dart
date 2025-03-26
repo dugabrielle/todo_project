@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_project/src/screens/home.dart';
+import 'package:todo_project/src/screens/login.dart';
 import 'package:todo_project/src/screens/welcome.dart';
 import 'package:todo_project/src/themes/app_theme.dart';
 
@@ -23,7 +24,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: _darkMode ? AppTheme.darkTheme : AppTheme.lightTheme,
-      home: WelcomeScreen(
+      home: LoginScreen(
         alternarTema: _alternarTema,
         darkMode: _darkMode, // adicionar dps o provider
       ),
