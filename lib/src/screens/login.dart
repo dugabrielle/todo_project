@@ -66,6 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // campo email
                     TextFormField(
                       controller: _emailController,
                       style: const TextStyle(
@@ -85,7 +86,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
+                    
                     const Expanded(child: SizedBox()),
+                    // campo senha
                     TextFormField(
                       controller: _passwordController,
                       obscureText: _obscureText,
