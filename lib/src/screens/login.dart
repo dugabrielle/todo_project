@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         labelText: 'E-mail',
                         labelStyle: TextStyle(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: 18,
                         ),
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black),
@@ -92,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         labelText: 'Senha',
                         labelStyle: const TextStyle(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: 18,
                         ),
                         enabledBorder: const UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black),
