@@ -20,7 +20,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Color(0xFF8A6ACD), Color(0xFFEFDEFA)],
+            colors: [Color(0xFF9E76C8), Color(0xFFF7F1FC)],
           ),
         ),
         child: Center(
@@ -39,7 +39,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   style: TextStyle(
                     fontFamily: 'Poppins',
                     fontSize: 24,
-                    color: Colors.black,
+                    color: Color.fromARGB(255, 48, 48, 48),
                   ),
                   children: [
                     WidgetSpan(
@@ -58,11 +58,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 children: [
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF511FBB),
+                      backgroundColor: const Color(0xFF511FBB),
                       foregroundColor: Colors.white,
-                      minimumSize: Size(150, 50),
-                      textStyle:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                      minimumSize: const Size(150, 50),
+                      textStyle: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w600),
                     ),
                     onPressed: () {
                       Navigator.pushReplacementNamed(context, '/login');
@@ -72,15 +72,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   const SizedBox(width: 20),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFD1C2F1),
+                      backgroundColor: const Color(0xFFD1C2F1),
                       foregroundColor: Colors.black,
-                      minimumSize: Size(150, 50),
-                      textStyle:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                      minimumSize: const Size(150, 50),
+                      textStyle: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w600),
                     ),
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                     child: const Text('Criar conta'),
                   ),
                 ],
@@ -89,7 +87,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               const Text(
                 'Nossas redes',
                 style: TextStyle(
-                    fontFamily: 'Poppins', fontSize: 24, color: Colors.black),
+                    fontFamily: 'Poppins', fontSize: 24, color: Color.fromARGB(255, 48, 48, 48),),
               ),
               const SizedBox(height: 35),
               Row(
@@ -98,7 +96,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   IconButton(
                     icon: const FaIcon(
                       FontAwesomeIcons.facebook,
-                      color: Color(0xFF511FBB),
+                      color: Color(0xFF1877F2),
                       size: 50,
                     ),
                     onPressed: () {},
@@ -107,7 +105,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   IconButton(
                     icon: const FaIcon(
                       FontAwesomeIcons.instagram,
-                      color: Color(0xFF511FBB),
+                      color: Color(0xFF833AB4),
                       size: 50,
                     ),
                     onPressed: () {},
@@ -116,13 +114,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   IconButton(
                     icon: const FaIcon(
                       FontAwesomeIcons.linkedin,
-                      color: Color(0xFF511FBB),
+                      color: Color(0xFF0077B5),
                       size: 50,
                     ),
                     onPressed: () {},
                   ),
                 ],
-              ),
+              )
             ],
           ),
         ),
