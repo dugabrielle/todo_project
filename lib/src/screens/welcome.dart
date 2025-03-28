@@ -45,7 +45,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     WidgetSpan(
                       child: Icon(
                         Icons.favorite,
-                        color: Color(0xFF1D064C),
+                        color: Color(0xFF3F178F),
                         size: 26,
                       ),
                     ),
@@ -58,7 +58,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 children: [
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF511FBB),
+                      backgroundColor: const Color(0xFF3F178F),
                       foregroundColor: Colors.white,
                       minimumSize: const Size(150, 50),
                       textStyle: const TextStyle(
@@ -87,7 +87,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               const Text(
                 'Nossas redes',
                 style: TextStyle(
-                    fontFamily: 'Poppins', fontSize: 24, color: Color.fromARGB(255, 48, 48, 48),),
+                  fontFamily: 'Poppins',
+                  fontSize: 24,
+                  color: Color.fromARGB(255, 48, 48, 48),
+                ),
               ),
               const SizedBox(height: 35),
               Row(
