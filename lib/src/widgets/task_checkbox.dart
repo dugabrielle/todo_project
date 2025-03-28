@@ -17,6 +17,7 @@ class TaskCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color titleColor = Theme.of(context).colorScheme.tertiary;
     return Container(
       padding: const EdgeInsets.all(10),
       child: ListTile(
@@ -24,7 +25,7 @@ class TaskCheckbox extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
-        tileColor: Colors.white,
+        tileColor: titleColor,
         leading: Checkbox(
           value: todo.checkbox,
           onChanged: (bool? value) {
@@ -34,23 +35,22 @@ class TaskCheckbox extends StatelessWidget {
           checkColor: Colors.white,
           hoverColor: const Color(0xFFECD4F0),
           side: const BorderSide(
-            color: Colors.deepPurpleAccent,
+            color: Colors.black,
             width: 2,
           ),
         ),
         title: Text(
           todo.titulo,
-          style: TextStyle(
-            color: Colors.black,
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
             fontSize: 16,
             decoration: todo.checkbox ? TextDecoration.lineThrough : null,
           ),
         ),
         subtitle: Text(
           todo.descricao ?? '',
-          style: TextStyle(
-            color: Colors.grey[700],
-            fontSize: 14,
+          style: const TextStyle(
+            color: Colors.grey,
+            fontSize: 15,
           ),
         ),
         trailing: Row(
@@ -72,7 +72,7 @@ class TaskCheckbox extends StatelessWidget {
               },
               icon: const Icon(Icons.edit_note),
               iconSize: 25,
-              color: const Color(0xFF60D57A),
+              color: Theme.of(context).colorScheme.secondary,
               hoverColor: const Color(0xFFECD4F0),
             ),
           ],

@@ -4,20 +4,21 @@ import 'package:google_fonts/google_fonts.dart';
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    scaffoldBackgroundColor: const Color(0xFFE7D1F3),
-    primaryColor: Colors.deepPurple,
+    scaffoldBackgroundColor: const Color(0xFFE7D1F3), // Cor do Background
+    primaryColor: const Color(0xFF8E44AD), // Cor do Botão "Add Nota"
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color(0xFF9429E6),
-      foregroundColor: Colors.black,
+      backgroundColor: Color(0xFFC387DB), // Cor da AppBar
+      foregroundColor: Color(0xFF2F1F42), // Cor da Fonte da AppBar
     ),
     colorScheme: const ColorScheme.light(
-      primary: Colors.black,
-      secondary: Color(0xFF731FB3),
+      primary: Color(0xFF9956A3), // Cor da Fonte de Texto 2
+      secondary: Color(0xFF731FB3), // Cor dos Botões dentro das Tasks
+      tertiary: Color(0xFFF3E7F7), // Cor do Title Color
     ),
     textTheme: GoogleFonts.comicNeueTextTheme(
       const TextTheme(
         bodyMedium: TextStyle(
-          color: Colors.black,
+          color: Color(0xFF2F1F42), // Cor da Fonte de Texto
           fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
@@ -26,7 +27,7 @@ class AppTheme {
     iconButtonTheme: const IconButtonThemeData(
       style: ButtonStyle(
         iconColor: WidgetStatePropertyAll(
-          Color(0xFFFFA500),
+          Color(0xFFFFA500), // Cor do Sol
         ),
       ),
     ),
@@ -34,20 +35,21 @@ class AppTheme {
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: const Color(0xFF1E1E1E),
-    primaryColor: Colors.purple.shade700,
+    scaffoldBackgroundColor: const Color(0xFF121212), // Cor do Background
+    primaryColor: const Color(0xFF3E2969), // Cor do Botão "Add Nota"
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color(0xFF9673D2),
-      foregroundColor: Colors.white,
+      backgroundColor: Color(0xFF3B1D5F), // Cor da AppBar
+      foregroundColor: Color(0xFFE8D9F3), // Cor da Fonte de Texto
     ),
     colorScheme: const ColorScheme.dark(
-      primary: Colors.white,
-      secondary: Color(0xFFC2A8E8),
+      primary: Color(0xFF7456A3), // Cor da Fonte de Texto 2
+      secondary: Color(0xFF29044A), // Cor dos Botões dentro das Tasks
+      tertiary: Color(0xFF6A4C8C), // Cor do Title Color
     ),
     textTheme: GoogleFonts.comicNeueTextTheme(
       const TextTheme(
         bodyMedium: TextStyle(
-          color: Colors.white,
+          color: Color(0xFFE8D9F3), // Cor da Fonte de Texto
           fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
@@ -56,7 +58,7 @@ class AppTheme {
     iconButtonTheme: const IconButtonThemeData(
       style: ButtonStyle(
         iconColor: WidgetStatePropertyAll(
-          Color(0xFF1A3B6D),
+          Color(0xFF617DBE), // Cor da Lua
         ),
       ),
     ),

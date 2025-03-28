@@ -52,12 +52,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
                     'Tarefas',
-                    style: GoogleFonts.comicNeue(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600,
-                      color: Theme.of(context).colorScheme.primary,
-                      letterSpacing: 2,
-                    ),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 2,
+                        ),
                   ),
                 ),
                 if (tarefas.where((todo) => !todo.checkbox).isEmpty)
@@ -69,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 18,
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                     ),
@@ -92,12 +91,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Tarefas Concluídas',
-                      style: GoogleFonts.comicNeue(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).colorScheme.primary,
-                        letterSpacing: 2,
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 2,
+                          ),
                     ),
                   ),
                 ],
@@ -125,21 +123,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   _addNota();
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Theme.of(context).colorScheme.secondary,
+                  backgroundColor: Theme.of(context).primaryColor,
                   minimumSize: const Size(50, 50),
-                ),
-                child: IconButton(
-                  icon: Icon(
-                    Icons.add,
-                    size: 28,
-                    color: Theme.of(context).brightness == Brightness.light
-                        ? Colors.white
-                        : Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  iconSize: 28,
-                  onPressed: () {
-                    _addNota();
-                  },
+                ),
+                child: Icon(
+                  Icons.add,
+                  size: 28,
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? Colors.black
+                      : Colors.white,
                 ),
               ),
             ),
@@ -180,85 +175,85 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _addNota() {
-  showDialog(
-    context: context,
-    barrierDismissible: false, 
-    builder: (BuildContext context) {
-      return StatefulBuilder(
-        builder: (context, setState) {
-          return AlertDialog(
-            title: const Text('Adicionar Nota'),
-            content: Container(
-              constraints: const BoxConstraints(
-                maxHeight: 300,
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    TextField(
-                      controller: _tituloController,
-                      decoration: const InputDecoration(labelText: 'Título'),
-                      maxLength: 80,
-                      maxLines: null, // poderá ocupar várias linhas
-                       onChanged: (_) => setState(() {}),
-                    ),
-                    const SizedBox(height: 10),
-                    TextField(
-                      controller: _descricaoController,
-                      decoration: const InputDecoration(
-                        labelText: 'Descrição (opcional)',
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return AlertDialog(
+              title: const Text('Adicionar Nota'),
+              content: Container(
+                constraints: const BoxConstraints(
+                  maxHeight: 300,
+                ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TextField(
+                        controller: _tituloController,
+                        decoration: const InputDecoration(labelText: 'Título'),
+                        maxLength: 80,
+                        maxLines: null, // poderá ocupar várias linhas
+                        onChanged: (_) => setState(() {}),
                       ),
-                      maxLength: 80,
-                      maxLines: null,
-                    ),
-                    if (_tituloController.text.isEmpty)
-                      const Padding(
-                        padding: EdgeInsets.only(top: 8.0),
-                        child: Text(
-                          'O Título não pode ser vazio!',
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 14,
+                      const SizedBox(height: 10),
+                      TextField(
+                        controller: _descricaoController,
+                        decoration: const InputDecoration(
+                          labelText: 'Descrição (opcional)',
+                        ),
+                        maxLength: 80,
+                        maxLines: null,
+                      ),
+                      if (_tituloController.text.isEmpty)
+                        const Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: Text(
+                            'O Título não pode ser vazio!',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontSize: 14,
+                            ),
                           ),
                         ),
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-            actions: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(Icons.close, color: Colors.black),
-                    iconSize: 22,
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      if (_tituloController.text.isEmpty) {
-                        setState(() {}); // atualiza o estado para mostrar o erro
-                        return;
-                      }
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(Icons.save, color: Colors.purple),
-                    iconSize: 22,
-                  ),
-                ],
-              ),
-            ],
-          );
-        },
-      );
-    },
-  );
-}
-
+              actions: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(Icons.close, color: Colors.purple),
+                      iconSize: 22,
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        if (_tituloController.text.isEmpty) {
+                          setState(
+                              () {}); // atualiza o estado para mostrar o erro
+                          return;
+                        }
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(Icons.save, color: Colors.purple),
+                      iconSize: 22,
+                    ),
+                  ],
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
+  }
 
   AppBar appBarMethod(BuildContext context) {
     return AppBar(
@@ -291,7 +286,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {},
                   icon: Icon(
                     Icons.logout,
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).textTheme.bodyMedium?.color,
                   ),
                 ),
               ),
