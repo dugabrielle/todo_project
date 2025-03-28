@@ -235,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: const Icon(Icons.close, color: Colors.grey),
+                    icon: const Icon(Icons.close, color: Colors.black),
                     iconSize: 22,
                   ),
                   IconButton(
