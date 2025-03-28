@@ -65,7 +65,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           fontSize: 18, fontWeight: FontWeight.w600),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/login');
+                      Navigator.pushNamed(context, '/login');
                     },
                     child: const Text('Entrar'),
                   ),
