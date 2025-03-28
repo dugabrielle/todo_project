@@ -34,6 +34,10 @@ class _MyAppState extends State<MyApp> {
               alternarTema: _alternarTema,
               darkMode: _darkMode, // adicionar dps o provider
             ),
+        '/home': (context) => HomeScreen(
+              alternarTema: _alternarTema,
+              darkMode: _darkMode, // adicionar dps o provider
+            ),
       },
     );
   }

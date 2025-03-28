@@ -132,7 +132,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               WidgetStateProperty.all(const Size.fromWidth(130)),
                           padding: WidgetStateProperty.all(const EdgeInsets.all(16)),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+                        },
                         child: const Text(
                           'Entrar',
                           style: TextStyle(
