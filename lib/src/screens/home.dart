@@ -233,9 +233,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     }
                     Navigator.pop(context);
                   },
-                  icon: const Icon(Icons.save),
+                  icon: const Icon(Icons.save, color: Colors.purple),
                   iconSize: 22,
-                  color: Colors.purple,
                 ),
               ],
             );
