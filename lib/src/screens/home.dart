@@ -180,67 +180,85 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _addNota() {
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return StatefulBuilder(builder: (context, setState) {
-            return AlertDialog(
-              title: const Text('Adicionar Nota'),
-              content: Container(
-                constraints: const BoxConstraints(
-                  maxHeight: 300,
-                ),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TextField(
-                        controller: _tituloController,
-                        decoration: const InputDecoration(labelText: 'Títiulo'),
-                        maxLength: 80,
-                        maxLines: null, // poderá ocupar várias linhas
-                        onChanged: (_) => setState(() {}),
+  showDialog(
+    context: context,
+    barrierDismissible: false, 
+    builder: (BuildContext context) {
+      return StatefulBuilder(
+        builder: (context, setState) {
+          return AlertDialog(
+            title: const Text('Adicionar Nota'),
+            content: Container(
+              constraints: const BoxConstraints(
+                maxHeight: 300,
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextField(
+                      controller: _tituloController,
+                      decoration: const InputDecoration(labelText: 'Título'),
+                      maxLength: 80,
+                      maxLines: null, // poderá ocupar várias linhas
+                       onChanged: (_) => setState(() {}),
+                    ),
+                    const SizedBox(height: 10),
+                    TextField(
+                      controller: _descricaoController,
+                      decoration: const InputDecoration(
+                        labelText: 'Descrição (opcional)',
                       ),
-                      const SizedBox(height: 10),
-                      TextField(
-                        controller: _descricaoController,
-                        decoration: const InputDecoration(
-                            labelText: 'Descrição (opcional)'),
-                        maxLength: 80,
-                        maxLines: null,
-                      ),
-                      if (_tituloController.text.isEmpty)
-                        const Padding(
-                          padding: EdgeInsets.only(top: 8.0),
-                          child: Text(
-                            'O Título não pode ser vazio!',
-                            style: TextStyle(
-                              color: Colors.red,
-                              fontSize: 14,
-                            ),
+                      maxLength: 80,
+                      maxLines: null,
+                    ),
+                    if (_tituloController.text.isEmpty)
+                      const Padding(
+                        padding: EdgeInsets.only(top: 8.0),
+                        child: Text(
+                          'O Título não pode ser vazio!',
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontSize: 14,
                           ),
                         ),
-                    ],
-                  ),
+                      ),
+                  ],
                 ),
               ),
-              actions: [
-                IconButton(
-                  onPressed: () {
-                    if (_tituloController.text.isEmpty) {
-                      setState(() {}); // atualiza o estado para mostrar o erro
-                      return;
-                    }
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(Icons.save, color: Colors.purple),
-                  iconSize: 22,
-                ),
-              ],
-            );
-          });
-        });
-  }
+            ),
+            actions: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(Icons.close, color: Colors.grey),
+                    iconSize: 22,
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      if (_tituloController.text.isEmpty) {
+                        setState(() {}); // atualiza o estado para mostrar o erro
+                        return;
+                      }
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(Icons.save, color: Colors.purple),
+                    iconSize: 22,
+                  ),
+                ],
+              ),
+            ],
+          );
+        },
+      );
+    },
+  );
+}
+
 
   AppBar appBarMethod(BuildContext context) {
     return AppBar(
