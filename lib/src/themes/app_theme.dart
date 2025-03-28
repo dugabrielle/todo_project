@@ -36,15 +36,15 @@ class AppTheme {
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: const Color(0xFF121212), // Cor do Background
-    primaryColor: const Color(0xFF3E2969), // Cor do Botão "Add Nota"
+    primaryColor: const Color(0xFF210F44), // Cor do Botão "Add Nota"
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color(0xFF3B1D5F), // Cor da AppBar
+      backgroundColor: Color(0xFF4E2C79), // Cor da AppBar
       foregroundColor: Color(0xFFE8D9F3), // Cor da Fonte de Texto
     ),
     colorScheme: const ColorScheme.dark(
       primary: Color(0xFF7456A3), // Cor da Fonte de Texto 2
       secondary: Color(0xFF29044A), // Cor dos Botões dentro das Tasks
-      tertiary: Color(0xFF6A4C8C), // Cor do Title Color
+      tertiary: Color(0xFF735496), // Cor do Title Color
     ),
     textTheme: GoogleFonts.comicNeueTextTheme(
       const TextTheme(
